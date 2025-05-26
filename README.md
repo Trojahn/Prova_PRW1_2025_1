@@ -22,13 +22,17 @@ docker compose up --build
 
 ## ☕ Usando
 
-A API pode ser acessada com base no endereço `http://localhost:8080/`.
+Desenvolva o código-fonte da avaliação diretamente na pasta `/src`. O arquivo HTML resultante deve ser acessado no endereço `http://localhost:8080/`.
 
-As rotas disponíveis e seus propósitos são:
+A API pode ser acessada com base no endereço `http://localhost:3000/`. As rotas disponíveis e seus propósitos são:
 
-- GET `/perfil` - Retorna a lista de perfis cadastrados no sistema.
-- GET `/perfil/id/foto` - Retorna a imagem associada ao perfil de determinado **id**.
-- GET `/foto/xxxxx` - Retorna a imagem cujo nome complete é **xxxxx**. Este é o valor retornado para a *foto* na rota `/perfil`.
-- POST `/perfil` - Insere um novo perfil no sistema. Deve ser enviado no corpo da requisição os parâmetros **login** e **foto**, ambos no formato *multipart/form-data*.
-- DELETE `/perfil/id` - Remove o perfil do sistema, removendo também a foto associada ao perfil.
+- GET `/usuarios` - Retorna a lista de usuários cadastrados no sistema.
+- POST `/usuarios` - Cadastra um novo usuario. Deve ser enviado no corpo da requisição o parâmetro **nome** em formato json.
+- DELETE `/usuarios/<ID>` - Remove o usuário de acordo com seu ID, caso exista. Remove as compras associadas ao usuario.
+
+- GET `/produtos` - Retorna a lista de produtos cadastrados no sistema.
+- POST `/produtos` - Cadastra um novo produto. Deve ser enviado no corpo da requisição os parâmetros **nome** e **preco** em formato json. O **preco** deve ser um número maior que zero.
+- DELETE `/produtos/<ID>` - Remove o produto de acordo com seu ID, caso exista. Remove as compras associadas ao produto.
+
+- POST `/compras` - Cadastra uma nova compra produto. Deve ser enviado no corpo da requisição os parâmetros **id_produto** e **id_usuario** em formato json. Ambos **id_produto** e **id_usuario** devem ser valores válidos e devem ser únicos.
 

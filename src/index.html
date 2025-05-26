@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -7,13 +7,232 @@
     <title>Página inicial</title>
     <!-- Importação da biblioteca jQuery (opcional) -->
     <script type="text/javascript" src="js/jquery.js">  </script>
+    <link rel="stylesheet" href="css/bulma.min.css">
 </head>
 
 <body>
-    <h1>Bem vindo!</h1>
-    <p>Esta é a página inicial para desenvolver seu projeto.</p>
-    <p>Este documento já possui a importação da biblioteca jQuery embutida. Caso não a deseje, fique a vontade para
-        remover a sua importação deste arquivo HTML e também o arquivo jquery.js (pasta js) em si.</p>
+
+    <div class="content">
+        <p>Esta é a página inicial para desenvolver seu projeto.</p>
+        <p>Este documento já possui a importação da biblioteca jQuery embutida. Caso não a deseje, fique a vontade para
+            remover a sua importação deste arquivo HTML e também o arquivo jquery.js (pasta js) em si.</p>
+        <p>Para deixar o site "menos feito", uma proposta de CSS já está inclusa na página usando BULMA CSS. Caso não
+            queira
+            utilizá-la, basta remover a importação do arquivo bulma.min.css no &lt;head&gt; do HTML.</p>
+        <p>Após o fim da prova, recomenda-se remover este trecho inteiro para deixar o site bonitinho :)</p>
+    </div>
+
+    <div class="has-text-centered m-5">
+        <h1 class="title is-1">Prova de PRW1</h1>
+    </div>
+    <hr>
+    <div class="columns">
+        <div class="column is-1">
+            <!-- Margem a esquerda -->
+        </div>
+        <div class="column is-4">
+            <div class="has-text-centered">
+                <h2 class="title">Usuários</h2>
+            </div>
+            <!-- Formulário cadastro de clientes -->
+            <div class="box mt-5">
+                <form>
+                    <div class="field">
+                        <label class="label" for="nome-usuario">Nome do usuário</label>
+                        <div class="control">
+                            <input class="input" type="text" id="nome-usuario" name="nome" placeholder="Digite o nome"
+                                required>
+                        </div>
+                    </div>
+                    <div class="field is-grouped is-grouped-right">
+                        <div class="control">
+                            <button class="button is-primary" type="submit">Cadastrar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="box mt-5">
+                <form>
+                    <div class="field">
+                        <label class="label" for="select-usuario">Usuário</label>
+                        <div class="control">
+                            <select class="input" id="select-usuario" name="id_usuario" required>
+                                <option value="">Selecione o usuário</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="select-produto">Produto</label>
+                        <div class="control">
+                            <select class="input" id="select-produto" name="id_produto" required>
+                                <option value="">Selecione o produto</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field is-grouped is-grouped-right">
+                        <div class="control">
+                            <button class="button is-primary" type="submit">Cadastrar Compra</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="column is-2">
+            <!-- Margem central -->
+        </div>
+        <div class="column is-4">
+            <div class="has-text-centered">
+                <h2 class="title">Produtos</h2>
+            </div>
+            <div class="box mt-5">
+                <form>
+                    <div class="field">
+                        <label class="label" for="nome-produto">Nome do produto</label>
+                        <div class="control">
+                            <input class="input" type="text" id="nome-produto" name="nome"
+                                placeholder="Digite o nome do produto" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="preco-produto">Preço</label>
+                        <div class="control">
+                            <input class="input" type="number" id="preco-produto" name="preco"
+                                placeholder="Digite o preço" min="0" step="0.01" required>
+                        </div>
+                    </div>
+                    <div class="field is-grouped is-grouped-right">
+                        <div class="control">
+                            <button class="button is-primary" type="submit">Cadastrar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="has-text-centered">
+                <h3 class="title">Tabela de produtos</h3>
+            </div>
+            <div class="table-container">
+                <table class="table is-striped is-fullwidth mt-5" id="tabela-produtos">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Preço</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Estas duas linhas são criadas como exemplo. Remover na versão final. -->
+                        <tr>
+                            <td>1</td>
+                            <td>Teclado Gamer</td>
+                            <td>R$ 199.90</td>
+                            <td>
+                                <button class="button is-danger is-small btn-remover-produto"
+                                    data-id="1">Remover</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mouse Óptico</td>
+                            <td>R$ 59.90</td>
+                            <td>
+                                <button class="button is-danger is-small btn-remover-produto"
+                                    data-id="2">Remover</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="column is-1">
+            <!-- Margem a direita -->
+        </div>
+    </div>
+    <hr>
+    <div class="columns">
+        <div class="column is-10 is-offset-1">
+            <div class="has-text-centered">
+                <h3 class="title">Tabela de usuários</h3>
+            </div>
+            <div class="table-container">
+                <table class="table is-striped is-fullwidth mt-5" id="tabela-usuarios">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Produtos adquiridos</th>
+                            <th>Preço total</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- As linhas aqui inseridas são de exemplo. Remover. -->
+                        <tr>
+                            <td>1</td>
+                            <td>Maria</td>
+                            <td>
+                                <ul>
+                                    <li>1 - Teclado Gamer (R$ 199.90)</li>
+                                    <li>2 - Mouse Óptico (R$ 59.90)</li>
+                                </ul>
+                            </td>
+                            <td>
+                                R$ 258.90
+                            </td>
+                            <td>
+                                <button class="button is-danger is-small btn-remover-usuario"
+                                    data-id="1">Remover</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>João</td>
+                            <td>
+                                <ul>
+                                    <li>2 - Mouse Óptico (R$ 59.90)</li>
+                                </ul>
+                            </td>
+                            <td>R$ 59.90</td>
+                            <td>
+                                <button class="button is-danger is-small btn-remover-usuario"
+                                    data-id="2">Remover</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Fernanda</td>
+                            <td>
+                                <ul>
+                                    <li>1 - Teclado Gamer (R$ 199.90)</li>
+                                    <li>2 - Mouse Óptico (R$ 59.90)</li>
+                                    <li>3 - Monitor 24" (R$ 899.00)</li>
+                                </ul>
+                            </td>
+                            <td>R$ 1,157.90</td>
+                            <td>
+                                <button class="button is-danger is-small btn-remover-usuario"
+                                    data-id="3">Remover</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Carlos</td>
+                            <td>
+                                <em>Nenhum produto</em>
+                            </td>
+                            <td>R$ 0.00</td>
+                            <td>
+                                <button class="button is-danger is-small btn-remover-usuario"
+                                    data-id="4">Remover</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
