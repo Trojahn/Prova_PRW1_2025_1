@@ -77,10 +77,10 @@ LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
 INSERT INTO `produtos` VALUES
 (1,'Cerveja',5.5),
-(2,'Sab├úo em p├│',12),
-(3,'Ovo d├║zia',11),
+(2,'Sabao em po',12),
+(3,'Ovo duzia',11),
 (4,'Coca-cola 2lt',9.7),
-(5,'Macarr├úo Semolado Barilla',5.5);
+(5,'Macarrao Semolado Barilla',5.5);
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,11 +105,11 @@ CREATE TABLE `usuarios` (
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 INSERT INTO `usuarios` VALUES
-(1,'Jos├®'),
+(1,'Jose'),
 (2,'Maria'),
-(3,'Jo├úo'),
+(3,'Joao'),
 (4,'Pedro'),
-(5,'Andr├®ia');
+(5,'Andreia');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
