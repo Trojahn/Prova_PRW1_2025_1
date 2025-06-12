@@ -7,7 +7,6 @@ services:
       - "8080:80"
     volumes:
       - ./src:/usr/share/nginx/html:ro
-    container_name: services
     depends_on:
       - backend
     networks:
@@ -17,7 +16,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.backend
-    container_name: backend
     ports:
       - "3000:80"
     volumes:
@@ -29,7 +27,6 @@ services:
 
   database:
     image: mariadb:11
-    container_name: database
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
